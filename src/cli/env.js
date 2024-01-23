@@ -1,5 +1,11 @@
 const parseEnv = () => {
-    // Write your code here 
+  const parsedEnvVars = Object.keys(process.env).filter((envVar) =>
+    envVar.startsWith("RSS_")
+  );
+  const formattedEnvVars = parsedEnvVars
+    .map((envVar) => `${envVar}=${process.env[envVar]}`)
+    .join("; ");
+  console.log(formattedEnvVars);
 };
 
 parseEnv();
