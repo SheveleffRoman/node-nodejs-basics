@@ -3,8 +3,8 @@ import process from "process";
 
 const reverseString = new Transform({
   transform(chunk, _encoding, callback) {
-    const input = chunk.toString().trim();
-    const reversedString = input.split("").reverse().join("") + "\n";
+    const input = chunk.toString().trim().split("");
+    const reversedString = input.reverse().join("") + "\n"
 
     callback(null, reversedString);
   },
