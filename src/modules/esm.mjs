@@ -6,10 +6,6 @@ import { getDirnameFromUrl } from "../utils/utils.js";
 import { fileURLToPath } from "url";
 import { createRequire } from "node:module";
 
-// also works but experimental warning in console
-// import a from "./files/a.json" assert { type: "json" };
-// import b from "./files/b.json" assert { type: "json" };
-
 const random = Math.random();
 const filename = fileURLToPath(import.meta.url);
 const dirname = getDirnameFromUrl(import.meta.url);
@@ -17,8 +13,6 @@ const require = createRequire(import.meta.url);
 
 let unknownObject =
   random > 0.5 ? require("./files/a.json") : require("./files/b.json");
-// also works but experimental warning in console
-//   random > 0.5 ? a : b;
 
 console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);

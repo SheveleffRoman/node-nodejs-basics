@@ -9,5 +9,4 @@ const spawnChildProcess = async (args) => {
   fork(pathToChild, [...args]);
 };
 
-// Put your arguments in function call to test this functionality
 spawnChildProcess(["arg1", "arg2", "arg3"]);
